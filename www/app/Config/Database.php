@@ -33,8 +33,8 @@ class Database extends Config
     public $default = [
         'DSN'      => '',
         'hostname' => '139.162.15.125',
-        'username' => 'assistant_remote',
-        'password' => '820820',
+        'username' => 'maple_user',
+        'password' => 'v94176w6',
         'database' => 'db_assistant',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
@@ -47,7 +47,7 @@ class Database extends Config
         'compress' => false,
         'strictOn' => false,
         'failover' => [],
-        'port'     => 9050,
+        'port'     => 9903,
     ];
 
     /**
