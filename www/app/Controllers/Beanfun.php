@@ -15,11 +15,11 @@ class Beanfun extends BaseController
 
     public function index()
     {
-        // $beanfun = new BeanfunModel;
+        $beanfun = new BeanfunModel;
 
         $result['success'] = true;
         $result['test'] = '12345';
-        // $result['data'] = $bonus->findAll();
+        $result['data'] = $beanfun->findAll();
 
         return $this->respond($result, 200);
     }
