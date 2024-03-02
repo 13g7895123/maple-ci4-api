@@ -11,12 +11,19 @@ class MapleAccount extends BaseController
 {
     use ResponseTrait;
 
+    private $maple_account;
+    private $beanfun_account;
+
+    public function __construct()
+    {
+        $this->maple_account = new MapleAccountModel;
+        $this->beanfun_account = new BeanfunModel;
+    }
+
     public function index()
     {
-        $maple_account = new MapleAccountModel;
-
         $result['success'] = true;
-        $result['data'] = $maple_account->findAll();
+        $result['data'] = $this->maple_account->findAll();
 
         return $this->respond($result, 200);
     }
@@ -24,11 +31,14 @@ class MapleAccount extends BaseController
     public function create()
     {
         $maple_account = new MapleAccountModel;
+        $bf_account =  $this->request->getJsonVar('bf_account');
+        $bf_id = $this->beanfun_account
+            ->where('account', $bf_account)
+            ->row('id');
         $data = [
-           'name' => $this->request->getJsonVar('account'),
-           'email' => $this->request->getJsonVar('email'),
-           'phone' => $this->request->getJsonVar('phone'),
-           'phone_owner' => $this->request->getJsonVar('phone_owner'),
+           'beanfun_id' => $bf_id,
+           'name' => $this->request->getJsonVar('name'),
+           'role' => $this->request->getJsonVar('role')
         ];
         $maple_account->insert($data);
         $insert_id = $maple_account->getInsertID();
