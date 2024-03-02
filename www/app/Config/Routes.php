@@ -36,7 +36,7 @@ $routes->get('/', 'Home::index');
 $routes->group("api", function ($routes) {
 
     // RESTFUL API
-    $routes->get("beanfun", "BeanfunController::index");
+    $routes->get("beanfun", "beanfun::index");
     $routes->post("beanfun", "Beanfun::create");
 });
 /*
