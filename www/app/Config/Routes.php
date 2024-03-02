@@ -39,6 +39,7 @@ $routes->group("api", function ($routes) {
     $routes->get("beanfun", "Beanfun::index");
     $routes->post("beanfun", "Beanfun::create");
     $routes->post("mapleaccount", "MapleAccount::create");
+    $routes->post("giftproduct", "GiftProduct::create");
 });
 /*
  * --------------------------------------------------------------------
