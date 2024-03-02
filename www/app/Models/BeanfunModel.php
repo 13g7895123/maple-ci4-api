@@ -7,7 +7,7 @@ class BeanfunModel extends Model
 {
     protected $table      = 'beanfun_account';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['account', 'gmail', 'phone', 'phone_owner', 'create_at'];
+    protected $allowedFields = ['account', 'email', 'phone', 'phone_owner'];
 }
 
 ?>
