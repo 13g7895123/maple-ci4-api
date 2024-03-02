@@ -37,7 +37,7 @@ $routes->group("api", function ($routes) {
 
     // RESTFUL API
     $routes->get("bonus", "Bonus::index");
-    $routes->post("bonus", "Bonus::create");
+    $routes->post("beanfun", "Bonus::create");
 });
 /*
  * --------------------------------------------------------------------
