@@ -28,10 +28,10 @@ class Beanfun extends BaseController
     {
         $beanfun = new BeanfunModel;
         $data = [
-           'account' => $this->request->getVar('account'),
-           'email' => $this->request->getVar('email'),
-           'phone' => $this->request->getVar('phone'),
-           'phone_owner' => $this->request->getVar('phone_owner'),
+           'account' => $this->request->getJsonVar('account'),
+           'email' => $this->request->getJsonVar('email'),
+           'phone' => $this->request->getJsonVar('phone'),
+           'phone_owner' => $this->request->getJsonVar('phone_owner'),
         ];
         $beanfun->insert($data);
         $insert_id = $beanfun->getInsertID();
