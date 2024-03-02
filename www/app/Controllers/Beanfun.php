@@ -29,7 +29,7 @@ class Beanfun extends BaseController
         $beanfun = new BeanfunModel;
         $data = [
            'account' => $this->request->getJsonVar('account'),
-           'email' => $this->request->getJsonVar('email'),
+           'email' => $this->request->getJsonVar('email') . '@gmail.com',
            'phone' => $this->request->getJsonVar('phone'),
            'phone_owner' => $this->request->getJsonVar('phone_owner'),
         ];
