@@ -38,6 +38,7 @@ $routes->group("api", function ($routes) {
     // RESTFUL API
     $routes->get("beanfun", "Beanfun::index");
     $routes->post("beanfun", "Beanfun::create");
+    $routes->post("mapleaccount", "MapleAccount::create");
 });
 /*
  * --------------------------------------------------------------------
