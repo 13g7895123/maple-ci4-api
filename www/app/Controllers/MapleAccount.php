@@ -5,37 +5,38 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use CodeIgniter\API\ResponseTrait;
 use App\Models\BeanfunModel;
+use App\Models\MapleAccountModel;
 
-class Beanfun extends BaseController
+class MapleAccount extends BaseController
 {
     use ResponseTrait;
 
     public function index()
     {
-        $beanfun = new BeanfunModel;
+        $maple_account = new MapleAccountModel;
 
         $result['success'] = true;
-        $result['data'] = $beanfun->findAll();
+        $result['data'] = $maple_account->findAll();
 
         return $this->respond($result, 200);
     }
 
     public function create()
     {
-        $beanfun = new BeanfunModel;
+        $maple_account = new MapleAccountModel;
         $data = [
-           'account' => $this->request->getJsonVar('account'),
-           'email' => $this->request->getJsonVar('email') . '@gmail.com',
+           'name' => $this->request->getJsonVar('account'),
+           'email' => $this->request->getJsonVar('email'),
            'phone' => $this->request->getJsonVar('phone'),
            'phone_owner' => $this->request->getJsonVar('phone_owner'),
         ];
-        $beanfun->insert($data);
-        $insert_id = $beanfun->getInsertID();
+        $maple_account->insert($data);
+        $insert_id = $maple_account->getInsertID();
 
         if ($insert_id > 0){
             $result['success'] = true;
             $result['msg'] = 'Data Recorded Successfully!';
-            $result['data'] = $beanfun->find($insert_id);
+            $result['data'] = $maple_account->find($insert_id);
 
             return $this->respond($result, 200);
         }else{
