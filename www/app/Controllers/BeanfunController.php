@@ -44,7 +44,7 @@ class Beanfun extends BaseController
             return $this->respond($result, 200);
         }else{
             $result['success'] = false;
-            $result['msg'] = 'Insert data error';
+            $result['msg'] = 'Data Recorded Error';
 
             return $this->fail($result , 409);
         }
