@@ -15,10 +15,10 @@ class Bonus extends BaseController
 
     public function index()
     {
-        $bonus = new BonusModel;
+        // $bonus = new BonusModel;
 
         $result['success'] = true;
-        $result['data'] = $bonus->findAll();
+        // $result['data'] = $bonus->findAll();
 
         return $this->respond($result, 200);
     }
