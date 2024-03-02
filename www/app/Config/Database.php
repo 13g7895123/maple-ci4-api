@@ -35,7 +35,7 @@ class Database extends Config
         'hostname' => '139.162.15.125',
         'username' => 'maple_user',
         'password' => 'v94176w6',
-        'database' => 'db_assistant',
+        'database' => 'maple-db',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
