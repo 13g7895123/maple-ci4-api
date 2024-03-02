@@ -32,12 +32,12 @@ class MapleAccount extends BaseController
     {
         $maple_account = new MapleAccountModel;
         $bf_account =  $this->request->getJsonVar('bf_account');
-        $bf_id = $this->beanfun_account
+        $bf_data = $this->beanfun_account
             ->where('account', $bf_account)
-            ->find('id');
-        return $this->respond($bf_account, 200);
+            ->find();
+        return $this->respond($bf_data['id'], 200);
         $data = [
-           'beanfun_id' => $bf_id,
+           'beanfun_id' => $bf_data['id'],
            'name' => $this->request->getJsonVar('name'),
            'role' => $this->request->getJsonVar('role')
         ];
