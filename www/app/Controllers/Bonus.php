@@ -18,6 +18,7 @@ class Bonus extends BaseController
         // $bonus = new BonusModel;
 
         $result['success'] = true;
+        $result['test'] = '12345';
         // $result['data'] = $bonus->findAll();
 
         return $this->respond($result, 200);
