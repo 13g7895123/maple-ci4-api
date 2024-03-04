@@ -40,6 +40,7 @@ $routes->group("api", function ($routes) {
     $routes->post("beanfun", "Beanfun::create");
     $routes->post("mapleaccount", "MapleAccount::create");
     $routes->post("giftproduct", "GiftProduct::create");
+    $routes->post("giftbuyer", "GiftBuyer::create");
 });
 /*
  * --------------------------------------------------------------------
