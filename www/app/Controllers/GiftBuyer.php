@@ -28,7 +28,7 @@ class GiftBuyer extends BaseController
     public function create()
     {
         $data = [
-           'buyer_name' => $this->request->getJsonVar('buyer_name'),
+           'buyer_name' => $this->request->getJsonVar('name'),
            'discount' => $this->request->getJsonVar('discount')
         ];
         $this->gift_buyer->insert($data);
