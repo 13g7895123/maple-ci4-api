@@ -41,6 +41,7 @@ $routes->group("api", function ($routes) {
     $routes->post("mapleaccount", "MapleAccount::create");
     $routes->post("giftproduct", "GiftProduct::create");
     $routes->post("giftbuyer", "GiftBuyer::create");
+    $routes->get("giftbuyer", "GiftBuyer::index");
 });
 /*
  * --------------------------------------------------------------------
