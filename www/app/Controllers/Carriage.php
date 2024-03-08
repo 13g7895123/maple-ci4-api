@@ -28,7 +28,7 @@ class Carriage extends BaseController
     public function create()
     {
         /* 資料處理 */
-        $serial_number_str = $this->request->getJsonVar('serial_number');
+        $serial_number_str = $this->request->getJsonVar('serialNumber');
 
         if (strpos($serial_number_str, "\n") !== false) {   /* 判斷是否多筆資料 */
             $serial_number_data = explode("\n", $serial_number_str);
