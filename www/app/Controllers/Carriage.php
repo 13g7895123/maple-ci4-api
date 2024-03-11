@@ -135,7 +135,7 @@ class Carriage extends BaseController
                 // $result_count ++;
             }
         }
-        $result['count'] = count($result['data']);
+        $result['count'] = count($temp['data']);
         $result['data'] = $temp['data'];
         return $this->respond($result, 200);
     }
