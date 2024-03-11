@@ -119,6 +119,7 @@ class Carriage extends BaseController
     function for_sell_list(){
         $carriage_data = $this->carriage->findAll();
         $result = array();
+        $temp = array();
         // $result_count = 0;
         foreach ($carriage_data as $cd_val){
             $data = $this->carriage
@@ -130,12 +131,12 @@ class Carriage extends BaseController
                     'serial_number' => $cd_val['serial_number'],
                     'price' =>$cd_val['price']
                 ];
-                $result['data'][] = $result_data;
+                $temp['data'][] = $result_data;
                 // $result_count ++;
             }
         }
         $result['count'] = count($result['data']);
-        $result['data'] = $result['data'];
+        $result['data'] = $temp['data'];
         return $this->respond($result, 200);
     }
 
