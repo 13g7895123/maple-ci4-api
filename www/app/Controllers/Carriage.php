@@ -120,7 +120,6 @@ class Carriage extends BaseController
         $carriage_data = $this->carriage->findAll();
         $result = array();
         $temp = array();
-        // $result_count = 0;
         foreach ($carriage_data as $cd_val){
             $data = $this->carriage
                 ->where('serial_number', $cd_val['serial_number'])
@@ -132,7 +131,6 @@ class Carriage extends BaseController
                     'price' =>$cd_val['price']
                 ];
                 $temp['data'][] = $result_data;
-                // $result_count ++;
             }
         }
         $result['count'] = count($temp['data']);
