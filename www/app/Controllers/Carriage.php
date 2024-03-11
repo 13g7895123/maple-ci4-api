@@ -116,9 +116,25 @@ class Carriage extends BaseController
     }
 
     function for_sell_list(){
-
+        $carriage_data = $this->carriage->findAll();
+        $result = array();
+        $result_count = 0;
+        foreach ($carriage_data as $cd_val){
+            $data = $this->carriage
+                ->where('serial_number', $cd_val['serial_number'])
+                ->where('type', 0)
+                ->first();
+            if (empty($data)){
+                $result[$result_count]['serial_number'] = $cd_val['serial_number'];
+                $result[$result_count]['price'] = $cd_val['price'];
+                $result_count ++;
+            }
+        }
+        $result['count'] = $result_count;
+        return $this->respond($result, 200);
     }
 
+    /* 修正商品沒有更新到資料 */
     function fix_data(){
         $carriage_data = $this->carriage->findAll();
         foreach ($carriage_data as $cd_val){
