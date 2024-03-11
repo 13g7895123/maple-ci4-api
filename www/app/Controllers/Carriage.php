@@ -126,8 +126,8 @@ class Carriage extends BaseController
                 ->where('type', 1)
                 ->first();
             if (empty($data)){
-                $result[$result_count]['serial_number'] = $cd_val['serial_number'];
-                $result[$result_count]['price'] = $cd_val['price'];
+                $result['data'][]['serial_number'] = $cd_val['serial_number'];
+                $result['data'][]['price'] = $cd_val['price'];
                 $result_count ++;
             }
         }
