@@ -121,6 +121,7 @@ class Carriage extends BaseController
 
     function fix_data(){
         $carriage_data = $this->carriage->findAll();
+        $result['type'] = gettype($carriage_data);
         $result['data'] = $carriage_data;
         // echo $carriage_data;
         return $this->respond($result, 200);
