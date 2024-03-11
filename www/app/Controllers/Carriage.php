@@ -127,8 +127,8 @@ class Carriage extends BaseController
             // echo json_encode($data);
             // $result[$result_count]['data'] = $data;
             if (empty($data)){
-                $result[$result_count]['serial_number'] = $cd_val['serial_number'];
-                $result[$result_count]['price'] = $cd_val['price'];
+                $result[]['serial_number'] = $cd_val['serial_number'];
+                $result[]['price'] = $cd_val['price'];
                 $result_count ++;
             }
         }
