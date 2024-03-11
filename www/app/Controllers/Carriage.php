@@ -115,6 +115,7 @@ class Carriage extends BaseController
         }
     }
 
+    /* 待售清單 */
     function for_sell_list(){
         $carriage_data = $this->carriage->findAll();
         $result = array();
@@ -124,11 +125,9 @@ class Carriage extends BaseController
                 ->where('serial_number', $cd_val['serial_number'])
                 ->where('type', 1)
                 ->first();
-            // echo json_encode($data);
-            // $result[$result_count]['data'] = $data;
             if (empty($data)){
-                $result[]['serial_number'] = $cd_val['serial_number'];
-                $result[]['price'] = $cd_val['price'];
+                $result[$result_count]['serial_number'] = $cd_val['serial_number'];
+                $result[$result_count]['price'] = $cd_val['price'];
                 $result_count ++;
             }
         }
