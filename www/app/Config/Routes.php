@@ -43,6 +43,7 @@ $routes->group("api", function ($routes) {
     $routes->post("giftbuyer", "GiftBuyer::create");
     $routes->get("giftbuyer", "GiftBuyer::index");
     $routes->post("carriage", "Carriage::create");     /* 馬車 */
+    $routes->get("carriage/test", "Carriage::fix_data");     /* 馬車 */
 });
 /*
  * --------------------------------------------------------------------
