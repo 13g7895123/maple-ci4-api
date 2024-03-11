@@ -71,6 +71,10 @@ class Carriage extends BaseController
         }
     }
 
+    /* 建立單筆資料(買/賣) 
+     * @param int $type     類別(買or賣)
+     * @param int $price    價格
+     */
     function single_data($serial_number){
         $type = $this->request->getJsonVar('type');
         $price = $this->request->getJsonVar('price');
@@ -109,5 +113,14 @@ class Carriage extends BaseController
         }else{
             return false;
         }
+    }
+
+    function for_sell_list(){
+
+    }
+
+    function fix_data(){
+        $carriage_data = $this->carriage->findAll();
+        echo $carriage_data;
     }
 }
