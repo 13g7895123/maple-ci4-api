@@ -121,8 +121,13 @@ class Carriage extends BaseController
 
     function fix_data(){
         $carriage_data = $this->carriage->findAll();
-        $result['type'] = gettype($carriage_data);
-        $result['data'] = $carriage_data;
+        foreach ($carriage_data as $cd_val){
+            $update_data = ['product' => '白剪'];
+            $this->carriage->update($cd_val['id'], $update_data);
+        }
+        // $result['type'] = gettype($carriage_data);
+        // $result['data'] = $carriage_data;
+        $result['success'] = true;
         // echo $carriage_data;
         return $this->respond($result, 200);
     }
